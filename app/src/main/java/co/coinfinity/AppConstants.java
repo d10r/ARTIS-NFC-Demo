@@ -12,9 +12,9 @@ public class AppConstants {
 
     public static final String ASK = "ask";
     private static final String HTTPS = "https://";
-    private static final String BASEURL = ".infura.io/v3/7b40d72779e541a498cb0da69aa418a2";
-    public static final String MAINNET_URI = HTTPS + "mainnet" + BASEURL;
-    public static final String ROPSTEN_URI = HTTPS + "ropsten" + BASEURL;
+    private static final String BASEURL = ".artis.network";
+    public static final String MAINNET_URI = HTTPS + "rpc.sigma1" + BASEURL;
+    public static final String TESTNET_URI = HTTPS + "rpc.tau1" + BASEURL;;
     private static final String ETHEUR = "ETHEUR";
     private static final String COINFINITY_BASE_URL = "https://coinfinity.co";
     public static final String HTTPS_COINFINITY_CO_PRICE_XBTEUR = COINFINITY_BASE_URL + "/price/" + ETHEUR;
@@ -22,6 +22,10 @@ public class AppConstants {
     public static final int FIVE_SECONDS = 5;
     //if sig counter below this value warning is shown to user
     public static final int WARNING_SIG_COUNTER = 100;
+
+    // can't yet be set to correct value due to https://github.com/web3j/web3j/issues/234
+    public static final byte ARTIS_SIGMA1_CHAIN_ID = 1; // 246529;
+    public static final byte ARTIS_TAU1_CHAIN_ID = 1; // 246785;
 
     // preferences
     public static final String PREFERENCE_FILENAME = "CoinfineonPrefs";

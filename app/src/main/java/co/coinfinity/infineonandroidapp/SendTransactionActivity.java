@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import co.coinfinity.AppConstants;
 import co.coinfinity.infineonandroidapp.adapter.UnitSpinnerAdapter;
 import co.coinfinity.infineonandroidapp.ethereum.CoinfinityClient;
 import co.coinfinity.infineonandroidapp.ethereum.bean.EthBalanceBean;
@@ -235,9 +236,9 @@ public class SendTransactionActivity extends AppCompatActivity {
         final BigDecimal gasLimit = new BigDecimal(gasLimitStr.equals("") ? "0" : gasLimitStr);
 
         SharedPreferences pref = getSharedPreferences(PREFERENCE_FILENAME, Context.MODE_PRIVATE);
-        byte chainId = ChainId.MAINNET;
+        byte chainId = AppConstants.ARTIS_SIGMA1_CHAIN_ID;
         if (!pref.getBoolean(PREF_KEY_MAIN_NETWORK, true)) {
-            chainId = ChainId.ROPSTEN;
+            chainId = AppConstants.ARTIS_TAU1_CHAIN_ID;
         }
 
         Pair<EthSendTransaction, GenerateSignatureResponseApdu> response = null;

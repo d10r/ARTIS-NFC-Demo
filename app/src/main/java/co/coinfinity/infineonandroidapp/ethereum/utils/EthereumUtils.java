@@ -126,7 +126,12 @@ public class EthereumUtils {
         Log.d(TAG, String.format("v: %s", v));
 
         Sign.SignatureData signatureData = new Sign.SignatureData(v, r, s);
-        signatureData = TransactionEncoder.createEip155SignatureData(signatureData, chainId);
+
+        // TODO: This is a dirty workaround to https://github.com/web3j/web3j/issues/234:
+        // ARTIS has a 2-byte chainId. Since that doesn't fit into web3j data structures,
+        // we do without EIP155 here (meaning no cross-chain relay protection) by setting v to 27.
+        //signatureData = TransactionEncoder.createEip155SignatureData(signatureData, chainId);
+        signatureData = new Sign.SignatureData((byte)27, signatureData.getR(), signatureData.getS());
 
         String hexValue = Numeric.toHexString(TransactionEncoder.encode(rawTransaction, signatureData));
         EthSendTransaction ethSendTransaction = web3.ethSendRawTransaction(hexValue).send();

@@ -2,6 +2,8 @@ package co.coinfinity.infineonandroidapp.ethereum.utils;
 
 import android.nfc.tech.IsoDep;
 import android.util.Pair;
+
+import co.coinfinity.AppConstants;
 import co.coinfinity.infineonandroidapp.ethereum.bean.EthBalanceBean;
 import co.coinfinity.infineonandroidapp.infineon.NfcUtils;
 import co.coinfinity.infineonandroidapp.infineon.apdu.response.GenerateSignatureResponseApdu;
@@ -18,7 +20,6 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.Web3jFactory;
 import org.web3j.protocol.core.methods.response.EthSendTransaction;
 import org.web3j.protocol.http.HttpService;
-import org.web3j.tx.ChainId;
 import org.web3j.utils.Convert;
 import org.web3j.utils.Numeric;
 
@@ -26,7 +27,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-import static co.coinfinity.AppConstants.ROPSTEN_URI;
+import static co.coinfinity.AppConstants.TESTNET_URI;
 import static co.coinfinity.infineonandroidapp.ethereum.utils.TransactionSigner.GAS_LIMIT;
 import static co.coinfinity.infineonandroidapp.ethereum.utils.TransactionSigner.GAS_PRICE;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -46,7 +47,7 @@ public class EthereumUtilsTest {
 
     @Test
     public void testGetBalanceTest() throws Exception {
-        final EthBalanceBean balance = EthereumUtils.getBalance(TransactionSigner.credentials.getAddress(), ROPSTEN_URI);
+        final EthBalanceBean balance = EthereumUtils.getBalance(TransactionSigner.credentials.getAddress(), TESTNET_URI);
 
         assertTrue(balance.getEther().doubleValue() > 0);
         assertTrue(balance.getWei().doubleValue() > 0);
@@ -72,7 +73,7 @@ public class EthereumUtilsTest {
                 Convert.toWei("0.002", Convert.Unit.ETHER).toBigInteger(),
                 isoDep,
                 Numeric.toHexStringNoPrefixZeroPadded(TransactionSigner.credentials.getEcKeyPair().getPublicKey(), 128),
-                "", ROPSTEN_URI, ChainId.ROPSTEN, 1, null);
+                "", TESTNET_URI, AppConstants.ARTIS_TAU1_CHAIN_ID, 1, null);
 
         assertNull(ethSendTransaction.first.getError());
         System.out.println(ethSendTransaction.first.getTransactionHash());
@@ -81,7 +82,7 @@ public class EthereumUtilsTest {
 
     @Test
     public void testGetNextNonce() throws IOException {
-        Web3j web3 = Web3jFactory.build(new HttpService(ROPSTEN_URI));
+        Web3j web3 = Web3jFactory.build(new HttpService(TESTNET_URI));
 
         final BigInteger nextNonce = EthereumUtils.getNextNonce(web3, "0xfd37944e59fB227043F1F53Ca6Aef1C953684f46");
 

@@ -6,13 +6,13 @@
     <string name="logo" translatable="false">Logo</string>
     <string name="qr_code" translatable="false">QR Code</string>
 
-    <string name="title_activity_send_transaction">Send ETH Transaction</string>
+    <string name="title_activity_send_transaction">Send ATS Transaction</string>
     <string name="title_activity_send_erc20_tokens">Send ERC 20 Tokens</string>
     <string name="title_activity_voting">Voting</string>
     <string name="hold_card">Tap a card against the back of your device</string>
-    <string name="send_eth">Send ETH</string>
+    <string name="send_eth">Send ATS</string>
     <string name="recipient_address">Recipient Address</string>
-    <string name="amount_eth">Amount ETH</string>
+    <string name="amount_eth">Amount ATS</string>
     <string name="gas_price">Gas Price</string>
     <string name="gas_limit">Gas Limit</string>
     <string name="hold_card_payment">Tap a card against the back of your device to send a transaction</string>
@@ -43,8 +43,8 @@
     <string name="hold_card_for_vote">Tap a card against the back of your device to vote</string>
     <string name="refresh_balance">Refresh balance</string>
     <string name="switch_network">Switch network</string>
-    <string name="switch_to_mainnet">Switch to mainnet</string>
-    <string name="switch_to_ropsten">Switch to testnet</string>
+    <string name="switch_to_mainnet">Switch to ARTIS Sigma1</string>
+    <string name="switch_to_testnet">Switch to ARTIS Tau1</string>
     <string name="ask_switch_network">Are you sure you want to switch to %s</string>
     <string name="yes">yes</string>
     <string name="no">no</string>

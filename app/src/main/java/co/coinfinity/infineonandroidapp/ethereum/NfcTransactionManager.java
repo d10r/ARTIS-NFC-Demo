@@ -7,6 +7,8 @@ import android.nfc.tech.IsoDep;
 import android.util.Log;
 import android.util.Pair;
 import android.widget.TextView;
+
+import co.coinfinity.AppConstants;
 import co.coinfinity.infineonandroidapp.R;
 import co.coinfinity.infineonandroidapp.VotingActivity;
 import co.coinfinity.infineonandroidapp.ethereum.utils.EthereumUtils;
@@ -68,9 +70,9 @@ public class NfcTransactionManager extends TransactionManager {
             String data, BigInteger value) {
 
         SharedPreferences pref = activity.getSharedPreferences(PREFERENCE_FILENAME, Context.MODE_PRIVATE);
-        byte chainId = ChainId.MAINNET;
+        byte chainId = AppConstants.ARTIS_SIGMA1_CHAIN_ID;
         if (!pref.getBoolean(PREF_KEY_MAIN_NETWORK, true)) {
-            chainId = ChainId.ROPSTEN;
+            chainId = AppConstants.ARTIS_TAU1_CHAIN_ID;
         }
 
         Pair<EthSendTransaction, GenerateSignatureResponseApdu> response = null;

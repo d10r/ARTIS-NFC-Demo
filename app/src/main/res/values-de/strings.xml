@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_activity_title" >Home</string>
-    <string name="title_activity_send_transaction">Sende ETH Transaktion</string>
+    <string name="title_activity_send_transaction">Sende ATS Transaktion</string>
     <string name="title_activity_send_erc20_tokens">Sende ERC-20 Tokens</string>
     <string name="title_activity_voting">Wählen</string>
     <string name="hold_card">Halte eine Karte an die Rückseite des Gerätes</string>
-    <string name="send_eth">Sende ETH</string>
+    <string name="send_eth">Sende ATS</string>
     <string name="recipient_address">Empfänger Adresse</string>
-    <string name="amount_eth">Anzahl ETH</string>
+    <string name="amount_eth">Anzahl ATS</string>
     <string name="gas_price">Gas Preis</string>
     <string name="gas_limit">Gas Limit</string>
     <string name="hold_card_payment">Halte eine Karte an die Rückseite des Gerätes um eine Zahlung durchzuführen</string>
@@ -39,8 +39,8 @@
     <string name="hold_card_for_vote">Halte eine Karte an die Rückseite des Gerätes um eine Antwort abzugeben</string>
     <string name="refresh_balance">Aktualisiere Kontostand</string>
     <string name="switch_network">Wechsle Netzwerk</string>
-    <string name="switch_to_mainnet">Wechsel zum Mainnet</string>
-    <string name="switch_to_ropsten">Wechsel zum Testnet</string>
+    <string name="switch_to_mainnet">Wechsel zu ARTIS Sigma1</string>
+    <string name="switch_to_testnet">Wechsel zu ARTIS Tau1</string>
     <string name="ask_switch_network">Möchten sie zum %s wechseln?</string>
     <string name="yes">ja</string>
     <string name="no">nein</string>

@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
     public void onVoting(View view) {
 //        Switch to new voting if needed
 //        Intent intent = new Intent(this, VotingActivity.class);
-        Intent intent = new Intent(this, VotingActivityOld.class);
+        Intent intent = new Intent(this, VotingActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("pubKey", pubKeyString);
         bundle.putString("ethAddress", ethAddress);

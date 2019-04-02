@@ -76,11 +76,11 @@ public class UiUtils {
                 int menuItemTextId;
                 String strNetwork;
                 if (isMainNetwork) {
-                    menuItemTextId = R.string.switch_to_ropsten;
-                    strNetwork = "ropsten test network";
+                    menuItemTextId = R.string.switch_to_testnet;
+                    strNetwork = "ARTIS Tau1";
                 } else {
                     menuItemTextId = R.string.switch_to_mainnet;
-                    strNetwork = "main network";
+                    strNetwork = "ARTIS Sigma1";
                 }
                 String finalStrNetwork = strNetwork;
                 new AlertDialog.Builder(activity)
@@ -154,7 +154,7 @@ public class UiUtils {
             return MAINNET_URI;
         }
 
-        return ROPSTEN_URI;
+        return TESTNET_URI;
     }
 
     /**
