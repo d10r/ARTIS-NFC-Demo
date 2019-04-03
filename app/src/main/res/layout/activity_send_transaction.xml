@@ -9,8 +9,7 @@
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_width="match_parent">
 
         <android.support.v7.widget.Toolbar
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:id="@+id/toolbar" android:background="@color/colorPrimary"
-                app:titleTextColor="@android:color/white" app:navigationIcon="@drawable/co_logo_white"
+                app:titleTextColor="@android:color/white" app:navigationIcon="@drawable/artis_logo_small_white"
         >
         </android.support.v7.widget.Toolbar>
 

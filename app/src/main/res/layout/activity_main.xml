@@ -12,8 +12,9 @@
     <android.support.v7.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:id="@+id/toolbar" android:background="@color/colorPrimary"
-            app:titleTextColor="@android:color/white" app:navigationIcon="@drawable/co_logo_white"/>
+            android:id="@+id/toolbar" android:background="@color/colorSigma1"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:titleTextColor="@android:color/white" app:navigationIcon="@drawable/artis_logo_small_white"/>
 
     <ScrollView
             android:layout_width="match_parent"
@@ -51,8 +52,10 @@
 
             <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/coinfinity_logo"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/artis_logo1"
+                    android:layout_marginBottom="20dp"
+
                     android:adjustViewBounds="false" android:cropToPadding="false"
                     android:contentDescription="@string/logo"
             />
@@ -67,14 +70,14 @@
             />
             <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="180dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="180dp"
                     android:id="@+id/qrCode" android:contentDescription="@string/qr_code"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/ethAddress"
                     android:textIsSelectable="true" android:textAlignment="center"
-                    android:textSize="16sp"/>
+                    android:textSize="14sp"/>
             <TextView
                     android:id="@+id/balance"
                     android:layout_width="match_parent"
@@ -85,7 +88,8 @@
             <ImageView
                     android:id="@+id/image_nfc_icon"
                     android:layout_width="117dp"
-                    android:layout_height="68dp" app:srcCompat="@drawable/nfc_logo"/>
+                    android:layout_height="68dp" app:srcCompat="@drawable/nfc_logo"
+                    android:visibility="gone"/>
             <ProgressBar
                     style="?android:attr/progressBarStyle"
                     android:layout_width="match_parent"
@@ -119,10 +123,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/voting"
-                        android:onClick="onVoting" android:visibility="visible"
+                        android:onClick="onVoting" android:visibility="gone"
                         android:enabled="false"
                         android:textSize="18sp" android:text="@string/voting"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

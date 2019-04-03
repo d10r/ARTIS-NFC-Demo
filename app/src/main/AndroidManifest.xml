@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="co.coinfinity.infineonandroidapp">
+          package="io.lab10.artisnfcdemo">
 
     <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -15,12 +15,12 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/artis_icon"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/artis_icon_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity"
+        <activity android:name="io.lab10.artisnfcdemo.MainActivity"
                   android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -29,45 +29,45 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".SendTransactionActivity"
+                android:name="io.lab10.artisnfcdemo.SendTransactionActivity"
                 android:label="@string/title_activity_send_transaction"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".SendErc20TokensActivity"
+                android:name="io.lab10.artisnfcdemo.SendErc20TokensActivity"
                 android:label="@string/title_activity_send_erc20_tokens"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".VotingActivity"
+                android:name="io.lab10.artisnfcdemo.VotingActivity"
                 android:label="@string/title_activity_voting"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".AboutActivity"
+                android:name="io.lab10.artisnfcdemo.AboutActivity"
                 android:label="@string/title_activity_voting"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".ChangePinActivity"
+                android:name="io.lab10.artisnfcdemo.ChangePinActivity"
                 android:label="Change PIN"
                 android:theme="@style/AppTheme.NoActionBar"
                 android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".SetPinActivity"
+        <activity android:name="io.lab10.artisnfcdemo.SetPinActivity"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".UnlockPinActivity"
+        <activity android:name="io.lab10.artisnfcdemo.UnlockPinActivity"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".GenerateFromSeedActivity"
+        <activity android:name="io.lab10.artisnfcdemo.GenerateFromSeedActivity"
                   android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".CheckSigCountersActivity"
+        <activity android:name="io.lab10.artisnfcdemo.CheckSigCountersActivity"
                   android:screenOrientation="portrait">
         </activity>
     </application>
