@@ -107,7 +107,13 @@ public class EthereumUtils {
         RawTransaction rawTransaction = RawTransaction.createTransaction(
                 getNextNonce(web3, from), gasPrice, gasLimit, to, value, data);
 
-        byte[] encodedTransaction = encode(rawTransaction, chainId);
+        // ARTIS has a 2-byte chainId. Since that doesn't fit into web3j data structures,
+        // we do without EIP155 here (meaning no cross-chain relay protection).
+        // That means not including chainId in the message to be hashed and signed.
+        // See https://ethereum.github.io/yellowpaper/paper.pdf#appendix.F for more details
+        // encode() without chainId param creates such a message.
+        // TODO: This is a sad workaround to https://github.com/web3j/web3j/issues/234
+        byte[] encodedTransaction = encode(rawTransaction /*, chainId */);
 
         final byte[] hashedTransaction = Hash.sha3(encodedTransaction);
         final GenerateSignatureResponseApdu signedTransaction = NfcUtils.generateSignature(IsoTagWrapper.of(isoTag), keyIndex, hashedTransaction, pin);
@@ -127,11 +133,8 @@ public class EthereumUtils {
 
         Sign.SignatureData signatureData = new Sign.SignatureData(v, r, s);
 
-        // TODO: This is a dirty workaround to https://github.com/web3j/web3j/issues/234:
-        // ARTIS has a 2-byte chainId. Since that doesn't fit into web3j data structures,
-        // we do without EIP155 here (meaning no cross-chain relay protection) by setting v to 27.
+        // ... commented out in order to leave signatureData as is (without swapping v)
         //signatureData = TransactionEncoder.createEip155SignatureData(signatureData, chainId);
-        signatureData = new Sign.SignatureData((byte)27, signatureData.getR(), signatureData.getS());
 
         String hexValue = Numeric.toHexString(TransactionEncoder.encode(rawTransaction, signatureData));
         EthSendTransaction ethSendTransaction = web3.ethSendRawTransaction(hexValue).send();
